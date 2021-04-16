@@ -1,0 +1,38 @@
+@import '../../../variables.scss';
+
+.app-title {
+  padding-top: 20px;
+  margin: 0;
+  font-size: large;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 30% 30% 30%;
+}
+
+@media only screen and (min-width: 769px) {
+  .grid-container {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 480px) {
+  .grid-container {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="app-title">
+  <h3>Feed</h3>
+</div>
+<div class="actions">
+  <app-search-input></app-search-input>
+  <app-sort-by></app-sort-by>
+</div>
+<div class="grid-container">
+  <div class="grid-item" *ngFor="let item of items">
+    <app-item-card [item]="item">
+    </app-item-card>
+  </div>
+</div>

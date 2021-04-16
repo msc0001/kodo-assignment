@@ -1,0 +1,19 @@
+@import '../../../variables.scss';
+
+.search-wrapper {
+  border: $border;
+  background: $white;
+  border-radius: $border-radius;
+  padding: 10px;
+  box-shadow: 0 0px 10px $gray;
+  border-color: $gray;
+  input, button {
+    border: none;
+    background: none;
+    color: $font-color;
+    outline: none;
+  }
+  button .fa-search {
+    color: $font-color;
+  }
+}
