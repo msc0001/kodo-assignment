@@ -34,13 +34,11 @@ export class PaginationComponent implements OnInit {
 
     if (newPageValue>=this.total) {
       this.page = this.total;
-      return;
-    }
-    if (newPageValue <= 1) {
+    } else if (newPageValue <= 1) {
       this.page = 1;
-      return;
+    } else {
+      this.page = newPageValue;
     }
-    this.page = newPageValue;
     this.onChangeEmit();
   }
 
