@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SortByComponent implements OnInit {
   options: Array<any> = ['title', 'dateLastEdited'];
-  value: string = 'title';
+  value: string = '';
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onChange($event) {
+  onChange($event: any) {
     this.value = $event.target.value;
-    console.log(this.value)
+    console.log($event.target.value)
   }
 
 }
