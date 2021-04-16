@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables.scss';
+
+body {
+  margin: 0;
+  color: $font-color;
+  font-family: roboto;
+  background-color: $light-gray;
+  font-size: 12px;
+}
+

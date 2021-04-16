@@ -6,8 +6,6 @@
   <app-sort-by></app-sort-by>
 </div>
 <div class="grid-container">
-  <div class="grid-item" *ngFor="let item of items">
-    <app-item-card [item]="item">
-    </app-item-card>
-  </div>
+  <app-item-card class="card" *ngFor="let item of items" [item]="item">
+  </app-item-card>
 </div>

@@ -2,12 +2,6 @@
 $padding: 20px;
 
 .card {
-  &-section {
-    background-color: $white;
-    border: $border;
-    border-radius: $border-radius;
-    overflow: hidden;
-  }
   &-img {
     overflow: hidden;
     img.img {
