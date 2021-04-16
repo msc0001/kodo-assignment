@@ -6,6 +6,7 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { SortByComponent } from './components/sort-by/sort-by.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { FeedComponent } from './components/feed/feed.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { FeedComponent } from './components/feed/feed.component';
     SearchInputComponent,
     SortByComponent,
     ItemCardComponent,
-    FeedComponent
+    FeedComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule

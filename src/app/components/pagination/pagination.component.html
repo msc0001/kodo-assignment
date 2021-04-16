@@ -1,0 +1,18 @@
+<div class="pagination" *ngIf="total>0">
+  <span class="prev-page" [ngClass]="{'disabled': page===1}" (click)="handlePrev(true)">
+    <i class="fas fa-fast-backward"></i>
+  </span>
+  <span class="prev-page" [ngClass]="{'disabled': page===1}" (click)="handlePrev(false)">
+    <i class="fas fa-step-backward"></i>
+  </span>
+  <span class="page">
+    <input type="number" [value]="page" (change)="onChangePage($event)" [min]="1" [max]="total"/>
+     of {{total}}
+  </span>
+  <span class="next-page" [ngClass]="{'disabled': page===total}" (click)="handleNext(false)">
+    <i class="fas fa-step-forward"></i>
+  </span>
+  <span class="next-page" [ngClass]="{'disabled': page===total}" (click)="handleNext(true)">
+    <i class="fas fa-fast-forward"></i>
+  </span>
+</div>

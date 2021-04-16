@@ -21,31 +21,8 @@ export class FeedComponent implements OnInit {
     this.getItems();
   }
 
-  handleNext() {
-    if (this.page >= this.total) return;
-    this.page = this.page + 1;
-    this.getItems();
-  }
-
-  handlePrev() {
-    if (this.page <= 1) return;
-    this.page = this.page - 1;
-    this.getItems();
-  }
-
   onChangePage($event) {
-    const newPageValue = parseInt($event.target.value || "1", 10);
-
-    if (newPageValue>=this.total) {
-      this.page = this.total;
-      return;
-    }
-    if (newPageValue <= 1) {
-      this.page = 1;
-      return;
-    }
-    this.page = newPageValue;
-
+    this.page = $event;
     this.getItems();
   }
 

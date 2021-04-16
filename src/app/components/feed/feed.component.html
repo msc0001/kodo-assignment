@@ -9,15 +9,4 @@
   <app-item-card class="card" *ngFor="let item of items" [item]="item">
   </app-item-card>
 </div>
-<div class="pagination" *ngIf="total>0">
-  <span class="prev-page" [ngClass]="{'disabled': page===1}" (click)="handlePrev()">
-    <i class="fas fa-step-backward"></i>
-  </span>
-  <span class="page">
-    <input type="number" [value]="page" (change)="onChangePage($event)" [min]="1" [max]="total"/>
-     of {{total}}
-  </span>
-  <span class="next-page" [ngClass]="{'disabled': page===total}" (click)="handleNext()">
-    <i class="fas fa-step-forward"></i>
-  </span>
-</div>
+<app-pagination [page]="page" [total]="total" (onChange)="onChangePage($event)"></app-pagination>

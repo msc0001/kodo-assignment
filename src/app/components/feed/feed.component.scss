@@ -44,35 +44,3 @@
   box-shadow: 0px 0px 10px $gray;
   border-color: $gray;
 }
-
-.pagination {
-  padding: 10px 0px;
-  span {
-    margin-right: 10px;
-  }
-  .page {
-    input {
-      border: $border;
-      width: 30px;
-      &::after, &::before {
-        width: 0;
-        border: none;
-      }
-    }
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    /* Firefox */
-    input[type=number] {
-      -moz-appearance: textfield;
-    }
-  }
-
-  .disabled>i {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-}
