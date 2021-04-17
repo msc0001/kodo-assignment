@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { data } from 'src/app/app-data';
 import { ItemI } from 'src/models/item.interface';
 import { filterByMatchedQuery, getUrlSearchParams, sortConfig, sortItems } from 'src/utils'
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -11,7 +12,7 @@ import { filterByMatchedQuery, getUrlSearchParams, sortConfig, sortItems } from 
 })
 export class FeedComponent implements OnInit {
   // items which are matching the query after deep, copying data
-  allItems: Array<ItemI> = JSON.parse(JSON.stringify(data));
+  allItems: Array<ItemI> = [];
   // items to be render after pagination
   items: Array<ItemI> = [];
 
@@ -25,9 +26,11 @@ export class FeedComponent implements OnInit {
   pageSize: number = 9;
 
   location: Location;
+  route: ActivatedRoute
 
-  constructor(location: Location) {
+  constructor(location: Location, route: ActivatedRoute) {
     this.location = location;
+    this.route = route;
   }
 
   ngOnInit(): void {
@@ -56,7 +59,7 @@ export class FeedComponent implements OnInit {
   addSorting(itemsToAddSortingOn: Array<ItemI>): Array<ItemI> {
     const { sortBy } = this;
     const selectedSortByOption = sortConfig
-      .find(sortOption => sortOption.key === sortBy);
+      .find(sortOption => sortOption.value === sortBy);
 
     if (!sortBy || !selectedSortByOption) return itemsToAddSortingOn;
 
@@ -70,8 +73,10 @@ export class FeedComponent implements OnInit {
   }
 
   syncConfigWithUrl(url?: string, state?: any) {
-    const  locationPath = getUrlSearchParams(url || this.location.path());
-
+    const  locationPath = getUrlSearchParams(url || '');
+    if (!url) {
+      locationPath.params = this.route.snapshot.queryParams;
+    }
     this.searchedQuery = locationPath.params.query || '';
     this.sortBy = locationPath.params.sortby || '';
     this.getItems();

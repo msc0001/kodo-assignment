@@ -16,7 +16,8 @@ $padding: 20px;
       display: flex;
       justify-content: space-between;
       .date {
-        font-size: small;
+        font-size: smaller;
+        opacity: 0.6;
       }
     }
   }

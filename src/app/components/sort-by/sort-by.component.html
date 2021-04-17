@@ -1,7 +1,7 @@
 <div class="sort-by-wrapper">
   <select [(ngModel)]="value" (change)="onChange($event)">
-    <option> Sort by</option>
-    <option *ngFor="let option of options" [value]="option">{{option}}</option>
+    <option value="">Sort by</option>
+    <option *ngFor="let option of options" [value]="option.value">{{option.key}}</option>
   </select>
 </div>
 
