@@ -27,8 +27,9 @@ export class SortByComponent implements OnInit {
   onChange($event: any) {
     this.value = $event.target.value;
 
-    const path = this.route.snapshot.routeConfig.path;
-    let params = this.route.snapshot.queryParams;
+    let { path, params } = getUrlSearchParams(this.location.path())
+    // const path = this.route.snapshot.routeConfig.path;
+    // let params = this.route.snapshot.queryParams;
     if (!this.value) {
       const { sortby, ...rest } = params;
       params = rest;

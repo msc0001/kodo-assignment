@@ -1,4 +1,7 @@
 <div class="search-wrapper">
-  <input placeholder="Search" [value]="value" type="text" (change)="handleOnChange($event)" />
-  <button><i class="fas fa-search"></i></button>
+  <input placeholder="Search" [(ngModel)]="value" type="text" (change)="handleOnChange($event)" />
+  <button>
+    <i *ngIf="!value" class="fas fa-search"></i>
+    <i *ngIf="!!value" class="fas fa-times" (click)="clearSearchValue()"></i>
+  </button>
 </div>

@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { createQueryString } from 'src/utils';
 
@@ -24,6 +24,11 @@ export class SearchInputComponent implements OnInit {
 
   handleOnChange($event: any): void {
     this.value = $event.target.value;
+    if(this.value.includes("\\")) {
+      alert('Can not use "\\" in search query!!');
+      this.value = '';
+      return;
+    }
     // let { path, params } = getUrlSearchParams(this.location.path());
     const path = this.route.snapshot.routeConfig.path;
     let params = this.route.snapshot.queryParams;
@@ -40,5 +45,9 @@ export class SearchInputComponent implements OnInit {
     this.location.go(
       `${path}${queryString ? `?${queryString}` : ''}`
     );
+  }
+
+  clearSearchValue(): void {
+    this.handleOnChange({target: {value: ''}});
   }
 }

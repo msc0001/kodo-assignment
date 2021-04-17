@@ -13,7 +13,8 @@
     color: $font-color;
     outline: none;
   }
-  button .fa-search {
+  button i {
     color: $font-color;
+    cursor: pointer;
   }
 }

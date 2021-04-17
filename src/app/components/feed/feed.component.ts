@@ -73,10 +73,7 @@ export class FeedComponent implements OnInit {
   }
 
   syncConfigWithUrl(url?: string, state?: any) {
-    const  locationPath = getUrlSearchParams(url || '');
-    if (!url) {
-      locationPath.params = this.route.snapshot.queryParams;
-    }
+    const  locationPath = getUrlSearchParams(url || this.location.path());
     this.searchedQuery = locationPath.params.query || '';
     this.sortBy = locationPath.params.sortby || '';
     this.getItems();
