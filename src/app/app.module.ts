@@ -7,6 +7,9 @@ import { SortByComponent } from './components/sort-by/sort-by.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,14 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     PaginationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    Location,
+    { provide: LocationStrategy, useClass: PathLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

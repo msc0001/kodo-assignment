@@ -1,5 +1,5 @@
 <div class="sort-by-wrapper">
-  <select [value]="value" (change)="onChange($event)">
+  <select [(ngModel)]="value" (change)="onChange($event)">
     <option> Sort by</option>
     <option *ngFor="let option of options" [value]="option">{{option}}</option>
   </select>
