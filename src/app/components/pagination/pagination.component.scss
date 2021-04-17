@@ -6,15 +6,19 @@
   width: fit-content;
   background-color: #fff;
   margin: 24px 0;
+  margin-left: auto;
   box-shadow: $box-shadow;
   border: $border;
-  float: right;
   span {
     margin-right: 30px;
     font-size: 14px;
     i {
       cursor: pointer;
     }
+  }
+
+  .next-page:last-of-type {
+    margin-right: 0;
   }
   .page {
     input {

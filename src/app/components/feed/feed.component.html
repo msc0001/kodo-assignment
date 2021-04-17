@@ -8,5 +8,7 @@
 <div class="grid-container">
   <app-item-card class="card" *ngFor="let item of items" [item]="item">
   </app-item-card>
+  <div *ngIf="!items.length" class="no-data">Items not matched with your searched query.</div>
 </div>
 <app-pagination [page]="page" [total]="total" (onChange)="onChangePage($event)"></app-pagination>
+<app-table-view></app-table-view>

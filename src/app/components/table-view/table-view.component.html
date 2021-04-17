@@ -1,0 +1,23 @@
+<div class="space"></div>
+<div class="tabular-view">
+  <h3 class="title">Tabular View</h3>
+  <div class="table-header table-row">
+    <div class="table-cell th-cell"
+      *ngFor="let header of headers"
+    >
+      <span class="text">{{header.text}}</span>
+    </div>
+  </div>
+  <div class="table-row"
+    *ngFor="let row of rows"
+  >
+    <div class="table-cell"
+      *ngFor="let header of headers"
+    >
+      <img *ngIf="header.type==='img'" [src]="row[header.value]" alt=""/>
+      <span *ngIf="header.type==='str'">{{row[header.value]}}</span>
+      <span *ngIf="header.type==='date'">{{row[header.value] | date}}</span>
+    </div>
+  </div>
+</div>
+<div class="space"></div>

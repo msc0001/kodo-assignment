@@ -10,6 +10,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { TableViewComponent } from './components/table-view/table-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     SortByComponent,
     ItemCardComponent,
     FeedComponent,
-    PaginationComponent
+    PaginationComponent,
+    TableViewComponent
   ],
   imports: [
     BrowserModule,
