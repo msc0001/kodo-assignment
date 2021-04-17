@@ -7,6 +7,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+      ]
     }).compileComponents();
   }));
 
@@ -16,11 +18,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'kodo-app'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('kodo-app');
-  });
+  // it(`should have as title 'kodo-app'`, () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   expect(app.title).toEqual('kodo-app');
+  // });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
