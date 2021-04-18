@@ -7,7 +7,7 @@ export interface AppLocationI {
 }
 
 export const getUrlSearchParams = (normalisedParamString): AppLocationI => {
-  const [ path, query ] = normalisedParamString.split('?');
+  const [ path, query ] = decodeURIComponent(normalisedParamString).split('?');
   let params = {};
 
   if (query) {
