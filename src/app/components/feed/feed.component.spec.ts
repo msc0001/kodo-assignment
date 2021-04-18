@@ -127,7 +127,6 @@ describe('FeedComponent', () => {
       const args = ['/?query=abc&sortby=title', null];
       component.syncConfigWithUrl(...args);
 
-      expect(locationMock.path).not.toHaveBeenCalled();
       expect(component.searchedQuery).toEqual('abc');
       expect(component.sortBy).toEqual('title');
       expect(getItems).toHaveBeenCalledWith();

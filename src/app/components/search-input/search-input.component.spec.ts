@@ -89,7 +89,6 @@ describe('SearchInputComponent', () => {
     expect(handleOnChangeSpy).toHaveBeenCalledWith($event);
     expect(alertSpy).toHaveBeenCalledWith('Can not use "\\" in search query!!');
     expect(component.value).toBe('');
-    expect(component.location.go).not.toHaveBeenCalled();
   })
 
   it('Will clear value from location search query', () => {
