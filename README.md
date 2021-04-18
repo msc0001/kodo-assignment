@@ -43,15 +43,15 @@ Run `npm test` to execute the unit tests. This will open new chrome window if as
 
 ## Functionalities
 
-1. Search
-  `i.   matching query`
-  `ii.  exact match query with double quotes`
+### 1. Search
+ ####  `i.   matching query`
+ ####  `ii.  exact match query with double quotes`
 
-2. Sort
-  `i.   sort by title - asc`
-  `ii.  sort by dateLastEdited - desc`
-  `iii. sort by empty string - no sorting `
+### 2. Sort
+  #### `i.   sort by title - asc`
+  #### `ii.  sort by dateLastEdited - desc`
+  #### `iii. sort by empty string - no sorting `
 
-3. Pagination
-  `i.   fast-backword, prev, next and fast-forward buttons `
-  `ii.  input box to jump to any page no. - will accept any no. but after submit will convert proper page no.`
+### 3. Pagination
+  #### `i.   fast-backword, prev, next and fast-forward buttons `
+  #### `ii.  input box to jump to any page no. - will accept any no. but after submit will convert proper page no.`
