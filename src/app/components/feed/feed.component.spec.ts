@@ -185,4 +185,26 @@ describe('FeedComponent', () => {
       ).toEqual(data[12].description);
     })
   })
+
+  describe('Will test sorting functionality', () => {
+    it('should call getItems with new sorting param', () => {
+      const spyOnGetItems = spyOn(component, 'getItems').and.callThrough();
+      component.syncConfigWithUrl('/?sortby=dateLastEdited');
+
+      fixture.detectChanges();
+
+      expect(spyOnGetItems).toHaveBeenCalled();
+    })
+
+    it('should call getItems with not available sorting param', () => {
+      const spyOnGetItems = spyOn(component, 'getItems').and.callThrough();
+      component.syncConfigWithUrl('/?sortby=noKey');
+
+      fixture.detectChanges();
+
+      expect(spyOnGetItems).toHaveBeenCalled();
+      expect(component.allItems).toEqual(data);
+    })
+  })
+
 });
