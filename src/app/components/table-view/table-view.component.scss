@@ -24,10 +24,11 @@
       border: $border;
       border-collapse: collapse;
       display: table-cell;
+      overflow: hidden;
       img {
-        width: 80px;
+        width: auto;
         height: 80px;
-        border-radius: 100%;
+        border-radius: 0;
       }
     }
     &:nth-last-child(1) {

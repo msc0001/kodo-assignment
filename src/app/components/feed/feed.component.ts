@@ -23,7 +23,7 @@ export class FeedComponent implements OnInit {
   // pagination
   page: number = 1;
   total: number = 1;
-  pageSize: number = 9;
+  pageSize: number = 12;
 
   location: Location;
   route: ActivatedRoute
@@ -34,10 +34,9 @@ export class FeedComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.syncConfigWithUrl();
     this.location.onUrlChange((url, state) => this.syncConfigWithUrl(url, state));
     this.total = Math.ceil(this.allItems.length / this.pageSize);
-    this.getItems();
+    this.syncConfigWithUrl();
   }
 
   onChangePage($event) {
