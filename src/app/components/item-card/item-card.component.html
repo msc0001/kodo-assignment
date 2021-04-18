@@ -1,12 +1,14 @@
-<div class="card-img">
-  <img class="img" [src]="item.image" alt="{{item.name}}" />
-</div>
-<div class="card-content">
-  <h4 class="title">
-    <span>{{item.name}}</span>
-    <span class="date">
-      {{item.dateLastEdited | date}}
-    </span>
-  </h4>
-  <p class="description">{{item.description}}</p>
+<div *ngIf="item">
+  <div class="card-img">
+    <img class="img" [src]="item.image" alt="{{item.name}}" />
+  </div>
+  <div class="card-content">
+    <h4 class="title">
+      <span>{{item.name}}</span>
+      <span class="date">
+        {{item.dateLastEdited | date}}
+      </span>
+    </h4>
+    <p class="description">{{item.description}}</p>
+  </div>
 </div>
