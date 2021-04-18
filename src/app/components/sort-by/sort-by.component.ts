@@ -20,14 +20,14 @@ export class SortByComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.value = getUrlSearchParams(this.location.path())
+    this.value = getUrlSearchParams(this.location.path() || '')
       .params.sortby || '';
   }
 
   onChange($event: any) {
     this.value = $event.target.value;
 
-    let { path, params } = getUrlSearchParams(this.location.path())
+    let { path, params } = getUrlSearchParams(this.location.path() || '')
     // const path = this.route.snapshot.routeConfig.path;
     // let params = this.route.snapshot.queryParams;
     if (!this.value) {
