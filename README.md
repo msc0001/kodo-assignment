@@ -1,14 +1,20 @@
 # KodoApp
 
+`          Author: Mangal Singh
+                                                `
+
+## Prerequisites
+Node - v14.16.0
+npm - v6.14.11
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
-## Development server
+## Steps to run application [Development server]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. `npm install`
+2. `npm start`
+3. Navigate to `http://localhost:4200/`
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -16,12 +22,36 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm test` to execute the unit tests. This will open new chrome window if asks please allow.
 
-## Running end-to-end tests
+### Tech stack/Library
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+`karma`, `istanbul`, `jasmine` [angular-default]
 
-## Further help
+## Assumptions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. tabular view is independent and filters won't apply.
+2. same mock_json data is used to render in table as well
+3. Pagination not added on tabular view.
+
+
+## Additional files included
+
+1. Roboto fonts are used for font-family.
+2. Font-awesome icons [free version] are used.
+
+
+## Functionalities
+
+1. Search
+  `i.   matching query`
+  `ii.  exact match query with double quotes`
+
+2. Sort
+  `i.   sort by title - asc`
+  `ii.  sort by dateLastEdited - desc`
+  `iii. sort by empty string - no sorting `
+
+3. Pagination
+  `i.   fast-backword, prev, next and fast-forward buttons `
+  `ii.  input box to jump to any page no. - will accept any no. but after submit will convert proper page no.`

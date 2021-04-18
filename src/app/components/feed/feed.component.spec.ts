@@ -166,6 +166,16 @@ describe('FeedComponent', () => {
       expect(addPaginationSpy).toHaveBeenCalled();
       expect(component.items.length).toEqual(5);
     })
+
+    it('should test search for exact match query', () => {
+      component.searchedQuery = 'customer designer';
+      component.getItems();
+      expect(component.allItems.length).toEqual(12);
+
+      component.searchedQuery = '"customer designer"';
+      component.getItems();
+      expect(component.allItems.length).toEqual(0);
+    })
   })
 
   describe('Will test onChange pagination event', () => {
