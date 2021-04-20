@@ -15,9 +15,9 @@ interface HeaderI {
 }
 
 const headers = [
-  {text: 'Image', value: 'image', type: HeaderDataTypes.IMAGE},
   {text: 'Title', value: 'name', type: HeaderDataTypes.STRING},
   {text: 'Description', value: 'description', type: HeaderDataTypes.STRING},
+  {text: 'Image', value: 'image', type: HeaderDataTypes.STRING},
   {text: 'Date', value: 'dateLastEdited', type: HeaderDataTypes.DATE},
 ]
 
